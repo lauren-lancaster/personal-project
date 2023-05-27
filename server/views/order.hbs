@@ -1,0 +1,39 @@
+<h2>Order Form</h2>
+
+
+
+<form method = 'POST' action = '/order' class = 'form'>
+
+<label for="topping" class="label"> Flavour: </label>
+  <select id="flavour" name="flavour_id">
+    {{#each flavour}}
+    <option value="{{id}}" {{selected}}>{{flavour}}</option>
+    {{/each}}
+  </select>
+
+<label for="toppings" class="label"> Toppings: </label>
+  <select id="topping" name="topping_id">
+    {{#each topping}}
+    <option value="{{id}}" {{selected}}>{{topping}}</option>
+    {{/each}}
+  </select>
+
+<label for="ice" class="label"> Ice: </label>
+  <select id="ice" name="ice">
+    {{#each ice}}
+    <option value="{{value}}" {{selected}}>{{ice}}</option>
+    {{/each}}
+  </select>
+
+<label for="sugar" class="label"> Sugar: </label>
+  <select id="sugar" name="sugar">
+    {{#each sugar}}
+    <option value="{{value}}" {{selected}}>{{sugar}}</option>
+    {{/each}}
+  </select>
+
+</form>
+
+
+<!-- get render to here for form options-->
+<!-- remember add css on new branch
