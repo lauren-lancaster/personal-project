@@ -31,6 +31,9 @@ function getCustomerId(id) {
 //order page needs to have url order
 //with params as user name
 
+//order will join tables for customers etc
+//customer will be taken from the url where it matches the db
+
 //but for now
 
 //post form
