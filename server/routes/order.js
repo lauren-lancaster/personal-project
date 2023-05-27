@@ -6,15 +6,10 @@ const router = express.Router()
 
 module.exports = router
 
-router.get('/order', async (req, res) => {
-  console.log('order')
+router.get('/', async (req, res) => {
   const flavoursArr = await db.getFlavours()
-  res.render('order', { order: flavoursArr })
-})
-
-router.get('/order', async (req, res) => {
   const toppingsArr = await db.getToppings()
-  res.render('order', { order: toppingsArr })
+  res.render('order', { topping: toppingsArr, flavour: flavoursArr })
 })
 
 // router.post('/order', async (req, res) => {
