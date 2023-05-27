@@ -2,13 +2,13 @@ const config = require('./knexfile').development
 const db = require('knex')(config)
 
 module.exports = {
-  getOrders,
+  getCustomers,
   getFlavours,
   getToppings,
 }
 
-function getOrders() {
-  return db('orders').select()
+function getCustomers() {
+  return db('customers').select()
 }
 
 function getFlavours() {
