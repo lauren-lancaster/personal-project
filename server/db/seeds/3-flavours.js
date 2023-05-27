@@ -5,5 +5,15 @@ exports.seed = function (knex) {
       flavour: 'lychee',
       drink_name_one: 'fruit',
     },
+    {
+      id: 2,
+      flavour: 'peach',
+      drink_name_one: 'fruit',
+    },
+    {
+      id: 3,
+      flavour: 'yuzu',
+      drink_name_one: 'fruit',
+    },
   ])
 }
