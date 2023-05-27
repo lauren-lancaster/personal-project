@@ -4,34 +4,39 @@
 
 <form method = 'POST' action = '/order' class = 'form'>
 
+<div>
 <label for="topping" class="label"> Flavour: </label>
   <select id="flavour" name="flavour_id">
     {{#each flavour}}
     <option value="{{id}}" {{selected}}>{{flavour}}</option>
     {{/each}}
   </select>
-
+</div> <div>
 <label for="toppings" class="label"> Toppings: </label>
   <select id="topping" name="topping_id">
     {{#each topping}}
     <option value="{{id}}" {{selected}}>{{topping}}</option>
     {{/each}}
   </select>
-
+</div><div>
 <label for="ice" class="label"> Ice: </label>
   <select id="ice" name="ice">
-    {{#each ice}}
-    <option value="{{value}}" {{selected}}>{{ice}}</option>
-    {{/each}}
+    <option value="{{value}}" {{selected}}>0%</option>
+    <option value="{{value}}" {{selected}}>30%</option>
+    <option value="{{value}}" {{selected}}>60%</option>
+    <option value="{{value}}" {{selected}}>90%</option>
   </select>
-
+</div><div>
 <label for="sugar" class="label"> Sugar: </label>
   <select id="sugar" name="sugar">
-    {{#each sugar}}
-    <option value="{{value}}" {{selected}}>{{sugar}}</option>
-    {{/each}}
+    <option value="{{value}}" {{selected}}>0%</option>
+    <option value="{{value}}" {{selected}}>30%</option>
+    <option value="{{value}}" {{selected}}>60%</option>
+    <option value="{{value}}" {{selected}}>90%</option>
   </select>
-
+  </div> <div>
+  <button>Order!</button>
+  </div>
 </form>
 
 
