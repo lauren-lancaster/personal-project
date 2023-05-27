@@ -11,3 +11,19 @@ router.get('/', async (req, res) => {
   const customer_name = await db.getCustomers()
   res.render('home', { customer: customer_name })
 })
+
+// router.post('/', async (req, res) => {
+//   const { first_name, last_name } = req.body
+//   const { customer_id } = Number(req.body.id)
+//   const customer_info = { first_name, last_name, customer_id }
+//   console.log(customer_info)
+//   const result = await db.getCustomerId(customer_info)
+//   console.log(result)
+//   res.redirect(`order/${result}`)
+// })
+
+router.post('/', async (req, res) => {
+  const id = req.body.customer_id
+  const result = await db.getCustomerId(id)
+  res.redirect(`order/${result.id}`)
+})
