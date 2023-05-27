@@ -5,6 +5,7 @@ module.exports = {
   getCustomers,
   getFlavours,
   getToppings,
+  getCustomerId,
 }
 
 function getCustomers() {
@@ -19,8 +20,19 @@ function getToppings() {
   return db('toppings').select()
 }
 
+// function getCustomerId(customer_info) {
+//   return db('customers').select().where('id', customer_info.id)
+// }
+
+function getCustomerId(id) {
+  return db('customers').first().select('id').where('id', id)
+}
+
 //order page needs to have url order
 //with params as user name
+
+//order will join tables for customers etc
+//customer will be taken from the url where it matches the db
 
 //but for now
 

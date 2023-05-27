@@ -4,7 +4,7 @@
 
 <form method = 'POST' action = '/' class = 'form'>
 
-<div>
+{{!-- <div>
   <h3>New Customer:</h3>
 </div>
 <div>
@@ -13,11 +13,11 @@
 </div><div>
 <label for="name">Last name:</label>
   <input type="text" id="l_name" name="l_name" placeholder="Doe">
-</div><div>
+</div><div> --}}
 <h4>Returning Customer:</h4>
 </div>
 <div>
-  <select id="flavour" name="flavour_id">
+  <select id="customer" name="customer_id">
     {{#each customer}}
     <option value="{{id}}" {{selected}}>{{first_name}} {{last_name}}</option>
     {{/each}}
