@@ -1,6 +1,5 @@
-exports.seed = async function (knex) {
-  await knex('orders').del()
-  await knex('orders').insert([
+exports.seed = function (knex) {
+  return knex('orders').insert([
     {
       id: 1,
       ice: '30%',
