@@ -6,6 +6,7 @@ module.exports = {
   getFlavours,
   getToppings,
   getCustomerId,
+  getOneCustomer,
 }
 
 function getCustomers() {
@@ -26,6 +27,10 @@ function getToppings() {
 
 function getCustomerId(id) {
   return db('customers').first().select('id').where('id', id)
+}
+
+function getOneCustomer(id) {
+  return db('customers').first().select().where('id', id)
 }
 
 //order page needs to have url order

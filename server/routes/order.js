@@ -6,7 +6,8 @@ const router = express.Router()
 
 module.exports = router
 
-router.get('/', async (req, res) => {
+router.get('/:id', async (req, res) => {
+  const id = req.params.id
   const flavoursArr = await db.getFlavours()
   const toppingsArr = await db.getToppings()
   res.render('order', { topping: toppingsArr, flavour: flavoursArr })
