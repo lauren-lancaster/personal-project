@@ -5,7 +5,7 @@
 <form method = 'POST' action = '/order' class = 'form'>
 
 <div>
-<label for="topping" class="label"> Flavour: </label>
+<label for="flavour" class="label"> Flavour: </label>
   <select id="flavour" name="flavour_id">
     {{#each flavour}}
     <option value="{{id}}" {{selected}}>{{flavour}}</option>
@@ -35,7 +35,7 @@
     <option value="{{value}}" {{selected}}>90%</option>
   </select>
   </div> <div>
-  <a href="/profile/{{id}}"><button>Submit!</button></a>
+  <button>Submit!</button>
   </div>
 </form>
 

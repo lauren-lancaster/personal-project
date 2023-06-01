@@ -13,7 +13,19 @@ router.get('/:id', async (req, res) => {
   res.render('order', { topping: toppingsArr, flavour: flavoursArr })
 })
 
-// router.post('/order', async (req, res) => {
-//   const ordersArr = await db.getOrders()
-//   res.render('order', { order: ordersArr })
-// })
+//post for order
+
+router.post('/:id', async (req, res) => {
+  console.log('hi')
+  const { flavour, topping, ice, sugar } = req.body
+  const customer_id = req.params.id
+  const topping_id = await db.getToppingId(topping)
+  const flavour_id = await db.getFlavourId(flavour)
+  console.log(topping_id)
+  console.log(flavour_id)
+  //change order for topping and flavour
+  const order = { flavour_id, topping_id, ice, sugar, customer_id }
+  await db.createOrder(order)
+  console.log({ order })
+  res.redirect(`./profile/${customer_id}`)
+})

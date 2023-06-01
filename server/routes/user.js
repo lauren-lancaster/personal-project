@@ -18,7 +18,6 @@ router.get('/profile/:id', async (req, res) => {
   console.log('profile')
   const id = req.params.id
   const customer = await db.getOneCustomer(id)
-  console.log(customer)
   res.render('profile', customer)
 })
 
