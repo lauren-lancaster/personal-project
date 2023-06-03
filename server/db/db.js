@@ -6,6 +6,10 @@ module.exports = {
   getFlavours,
   getToppings,
   getCustomerId,
+  getOneCustomer,
+  createOrder,
+  getToppingId,
+  getFlavourId,
 }
 
 function getCustomers() {
@@ -26,6 +30,31 @@ function getToppings() {
 
 function getCustomerId(id) {
   return db('customers').first().select('id').where('id', id)
+}
+
+function getOneCustomer(id) {
+  return db('customers').first().select().where('id', id)
+}
+
+function getToppingId(topping) {
+  return db('toppings').first().select('id').where('id', topping)
+}
+
+function getFlavourId(flavour) {
+  return db('flavours').first().select('id').where('id', flavour)
+}
+
+function createOrder(order, ice, sugar) {
+  return db('orders').insert({
+    ice: ice,
+    sugar: sugar,
+    flavour_id: order.flavour_id.id,
+    topping_id: order.topping_id.id,
+    customer_id: order.customer_id,
+  })
+
+  //join
+  //insert
 }
 
 //order page needs to have url order
