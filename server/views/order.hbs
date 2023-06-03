@@ -2,7 +2,7 @@
 
 
 
-<form method = 'POST' action = '/order' class = 'form'>
+<form method = 'post' action = '/order/{{customer}}' class = 'form'>
 
 <div>
 <label for="flavour" class="label"> Flavour: </label>
@@ -21,18 +21,19 @@
 </div><div>
 <label for="ice" class="label"> Ice: </label>
   <select id="ice" name="ice">
-    <option value="{{value}}" {{selected}}>0%</option>
-    <option value="{{value}}" {{selected}}>30%</option>
-    <option value="{{value}}" {{selected}}>60%</option>
-    <option value="{{value}}" {{selected}}>90%</option>
+    {{!-- change value --}}
+    <option value="0%" {{selected}}>0%</option>
+    <option value="30%" {{selected}}>30%</option>
+    <option value="60%" {{selected}}>60%</option>
+    <option value="90%" {{selected}}>90%</option>
   </select>
 </div><div>
 <label for="sugar" class="label"> Sugar: </label>
   <select id="sugar" name="sugar">
-    <option value="{{value}}" {{selected}}>0%</option>
-    <option value="{{value}}" {{selected}}>30%</option>
-    <option value="{{value}}" {{selected}}>60%</option>
-    <option value="{{value}}" {{selected}}>90%</option>
+    <option value="0%" {{selected}}>0%</option>
+    <option value="30%" {{selected}}>30%</option>
+    <option value="60%" {{selected}}>60%</option>
+    <option value="90%" {{selected}}>90%</option>
   </select>
   </div> <div>
   <button>Submit!</button>

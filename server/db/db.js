@@ -37,20 +37,20 @@ function getOneCustomer(id) {
 }
 
 function getToppingId(topping) {
-  return db('toppings').first().select('id').where('topping', topping)
+  return db('toppings').first().select('id').where('id', topping)
 }
 
 function getFlavourId(flavour) {
-  return db('flavours').first().select('id').where('flavour', flavour)
+  return db('flavours').first().select('id').where('id', flavour)
 }
 
-function createOrder({ flavour_id, topping_id, ice, sugar, customer_id }) {
+function createOrder(order, ice, sugar) {
   return db('orders').insert({
     ice: ice,
     sugar: sugar,
-    flavour_id: flavour_id,
-    topping_id: topping_id,
-    customer_id: customer_id,
+    flavour_id: order.flavour_id.id,
+    topping_id: order.topping_id.id,
+    customer_id: order.customer_id,
   })
 
   //join
