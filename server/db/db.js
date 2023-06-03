@@ -52,10 +52,11 @@ function createOrder(order, ice, sugar) {
     topping_id: order.topping_id.id,
     customer_id: order.customer_id,
   })
-
-  //join
-  //insert
 }
+
+//set up a previous order function
+//that matches the customer id to url and displays all orders
+//orders will match ids in order table to flavours and toppings
 
 //order page needs to have url order
 //with params as user name
