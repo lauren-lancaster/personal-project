@@ -14,6 +14,12 @@ router.get('/', async (req, res) => {
 
 //router for profile page
 
+router.post('/', async (req, res) => {
+  const id = req.body.customer_id
+  const result = await db.getCustomerId(id)
+  res.redirect(`profile/${result.id}`)
+})
+
 router.get('/profile/:id', async (req, res) => {
   console.log('profile')
   const id = req.params.id
@@ -21,18 +27,11 @@ router.get('/profile/:id', async (req, res) => {
   res.render('profile', customer)
 })
 
-// router.post('/', async (req, res) => {
-//   const { first_name, last_name } = req.body
-//   const { customer_id } = Number(req.body.id)
-//   const customer_info = { first_name, last_name, customer_id }
-//   console.log(customer_info)
-//   const result = await db.getCustomerId(customer_info)
-//   console.log(result)
-//   res.redirect(`order/${result}`)
-// })
+//prev orders router
 
-router.post('/', async (req, res) => {
-  const id = req.body.customer_id
-  const result = await db.getCustomerId(id)
-  res.redirect(`profile/${result.id}`)
+router.get('/profile/order/:id', async (req, res) => {
+  console.log('prev orders')
+  const id = req.params.id
+  const orders = await db.getCustomerOrder(id)
+  console.log(orders)
 })

@@ -10,6 +10,7 @@ module.exports = {
   createOrder,
   getToppingId,
   getFlavourId,
+  getCustomerOrder,
 }
 
 function getCustomers() {
@@ -52,6 +53,13 @@ function createOrder(order, ice, sugar) {
     topping_id: order.topping_id.id,
     customer_id: order.customer_id,
   })
+}
+
+function getCustomerOrder(id) {
+  return db('orders')
+    .select('*', 'orders.id', 'toppings.id AS toppings_id')
+    .where('customer_id', id)
+    .join('toppings', 'orders.topping_id', 'toppings.id')
 }
 
 //set up a previous order function
