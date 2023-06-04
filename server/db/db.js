@@ -57,9 +57,15 @@ function createOrder(order, ice, sugar) {
 
 function getCustomerOrder(id) {
   return db('orders')
-    .select('*', 'orders.id', 'toppings.id AS toppings_id')
+    .select(
+      '*',
+      'orders.id',
+      'toppings.id AS toppings_id',
+      'flavours.id AS flavours_id'
+    )
     .where('customer_id', id)
     .join('toppings', 'orders.topping_id', 'toppings.id')
+    .join('flavours', 'orders.flavour_id', 'flavours.id')
 }
 
 //set up a previous order function

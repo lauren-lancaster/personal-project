@@ -33,5 +33,5 @@ router.get('/profile/order/:id', async (req, res) => {
   console.log('prev orders')
   const id = req.params.id
   const orders = await db.getCustomerOrder(id)
-  console.log(orders)
+  res.render(`prev-orders`, { orders })
 })
