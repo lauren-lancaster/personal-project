@@ -1,29 +1,29 @@
-<h2>Boba Tea</h2>
+{{> nav}}
 
+<div class="page-container">
 
+  <form method = 'POST' action = '/' class = 'form'>
 
-<form method = 'POST' action = '/' class = 'form'>
-
-{{!-- <div>
-  <h3>New Customer:</h3>
-</div>
-<div>
-<label for="name">First name:</label>
-  <input type="text" id="f_name" name="f_name" placeholder="John">
-</div><div>
-<label for="name">Last name:</label>
-  <input type="text" id="l_name" name="l_name" placeholder="Doe">
-</div><div> --}}
-<h4>Returning Customer:</h4>
-</div>
-<div>
-  <select id="customer" name="customer_id">
-    {{#each customer}}
-    <option value="{{id}}" {{selected}}>{{first_name}} {{last_name}}</option>
-    {{/each}}
-  </select>
-</div>
-</div> 
-  <button>Order!</button>
+  {{!-- <div>
+    <h3>New Customer:</h3>
   </div>
-</form>
+  <div>
+  <label for="name">First name:</label>
+    <input type="text" id="f_name" name="f_name" placeholder="John">
+  </div><div>
+  <label for="name">Last name:</label>
+    <input type="text" id="l_name" name="l_name" placeholder="Doe">
+  </div><div> --}}
+
+    <h4>Returning Customer:</h4>
+    <div>
+      <select id="customer" name="customer_id">
+        {{#each customer}}
+        <option value="{{id}}" {{selected}}>{{first_name}} {{last_name}}</option>
+        {{/each}}
+      </select>
+    </div>
+
+      <button>Order!</button>
+    </form>
+  </div>

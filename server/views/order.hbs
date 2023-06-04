@@ -1,44 +1,48 @@
-<h2>Order Form</h2>
+{{> nav}}
+
+<div class="page-container">
+  <h2>Order Form</h2>
 
 
 
-<form method = 'post' action = '/order/{{customer}}' class = 'form'>
+  <form method = 'post' action = '/order/{{customer}}' class = 'form'>
 
-<div>
-<label for="flavour" class="label"> Flavour: </label>
-  <select id="flavour" name="flavour_id">
-    {{#each flavour}}
-    <option value="{{id}}" {{selected}}>{{flavour}}</option>
-    {{/each}}
-  </select>
-</div> <div>
-<label for="toppings" class="label"> Toppings: </label>
-  <select id="topping" name="topping_id">
-    {{#each topping}}
-    <option value="{{id}}" {{selected}}>{{topping}}</option>
-    {{/each}}
-  </select>
-</div><div>
-<label for="ice" class="label"> Ice: </label>
-  <select id="ice" name="ice">
-    {{!-- change value --}}
-    <option value="0%" {{selected}}>0%</option>
-    <option value="30%" {{selected}}>30%</option>
-    <option value="60%" {{selected}}>60%</option>
-    <option value="90%" {{selected}}>90%</option>
-  </select>
-</div><div>
-<label for="sugar" class="label"> Sugar: </label>
-  <select id="sugar" name="sugar">
-    <option value="0%" {{selected}}>0%</option>
-    <option value="30%" {{selected}}>30%</option>
-    <option value="60%" {{selected}}>60%</option>
-    <option value="90%" {{selected}}>90%</option>
-  </select>
+  <div>
+  <label for="flavour" class="label"> Flavour: </label>
+    <select id="flavour" name="flavour_id">
+      {{#each flavour}}
+      <option value="{{id}}" {{selected}}>{{flavour}}</option>
+      {{/each}}
+    </select>
   </div> <div>
-  <button>Submit!</button>
-  </div>
-</form>
+  <label for="toppings" class="label"> Toppings: </label>
+    <select id="topping" name="topping_id">
+      {{#each topping}}
+      <option value="{{id}}" {{selected}}>{{topping}}</option>
+      {{/each}}
+    </select>
+  </div><div>
+  <label for="ice" class="label"> Ice: </label>
+    <select id="ice" name="ice">
+      {{!-- change value --}}
+      <option value="0%" {{selected}}>0%</option>
+      <option value="30%" {{selected}}>30%</option>
+      <option value="60%" {{selected}}>60%</option>
+      <option value="90%" {{selected}}>90%</option>
+    </select>
+  </div><div>
+  <label for="sugar" class="label"> Sugar: </label>
+    <select id="sugar" name="sugar">
+      <option value="0%" {{selected}}>0%</option>
+      <option value="30%" {{selected}}>30%</option>
+      <option value="60%" {{selected}}>60%</option>
+      <option value="90%" {{selected}}>90%</option>
+    </select>
+    </div> <div>
+    <button>Submit!</button>
+    </div>
+  </form>
+</div>
 
 
 <!-- get render to here for form options-->

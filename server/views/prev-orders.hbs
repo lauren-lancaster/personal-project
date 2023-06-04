@@ -1,13 +1,17 @@
-<h2>Previous Orders</h2>
+{{> nav}}
 
-<div>
-  {{#each orders}}
-  <ul>
-    <li><span>Drink: </span><span>{{drink_name_one}} {{drink_name_two}}</span></li>
-    <li><span>Flavour: </span><span>{{flavour}}</span></li>
-    <li><span>Topping: </span><span>{{topping}}</span></li>
-    <li><span>Ice: </span><span>{{ice}}</span></li>
-    <li><span>Sugar: </span><span>{{sugar}}</span></li>
-  </ul>
-  {{/each}}
+<div class="page-container">
+  <h2>Previous Orders</h2>
+
+  <div>
+    {{#each orders}}
+    <ul>
+      <li><span>Drink: </span><span>{{drink_name_one}} {{drink_name_two}}</span></li>
+      <li><span>Flavour: </span><span>{{flavour}}</span></li>
+      <li><span>Topping: </span><span>{{topping}}</span></li>
+      <li><span>Ice: </span><span>{{ice}}</span></li>
+      <li><span>Sugar: </span><span>{{sugar}}</span></li>
+    </ul>
+    {{/each}}
+  </div>
 </div>
